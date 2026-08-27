@@ -1,3 +1,0 @@
-$execute as @e[tag=cont] at @s if score @s game.data.uuid = @a[limit=1,nbt={UUID:$(Thrower)}] game.data.uuid run scoreboard players set @s game.data.uuid 0 
-$execute as @e[nbt={UUID:$(UUID)},limit=1] at @s run scoreboard players operation @n[tag=cont] game.data.uuid = @a[nbt={UUID:$(Thrower)},limit=1] game.data.uuid
-$execute as @e[nbt={UUID:$(UUID)},limit=1] at @s run tag @n[tag=cont] add display_options_menu
