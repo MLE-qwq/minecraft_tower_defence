@@ -1,0 +1,20 @@
+1,cactus
+2,egg_dispenser
+3,water
+4,trapdoor
+5,arrow_dispenser
+6,iron_bars
+7,slime_dispenser
+
+to add new contraptions, you'll need to alter:
+1. hardcode:cont.purchase.unlocked_scoreboards.mcfunction - creating a scoreboard that stores whether the player is able to purchase the contraption
+2. hardcode:cont.purchase.unlocking.mcfunction - to display a message to the player upon the unlocking of the contraption
+3. hardcode:cont.purchase.main.mcfunction - to process what to do after a player has hit the purchase button in the menu
+4. hardcode:cont.new.mcfunction - how a contraption should be formed eg summoning a falling_block entity for a cactus
+5. hardcode:cont.effects_upon_removal.mcfunction - what to do to the contraption when it is removed
+6. game:purchase_menu.json - to add the contraption into the purchase menu
+7. game:cont_upgrades.mcfunction - what to do when the player has hit the upgrade button in the menu
+8. hardcode:cont.upgrades.mcfunction - stores data about what the next upgrade would be like and the cost
+9. hardcode:generic.mob_cont_behavior.mcfunction - how the functionality of the contraption would be, apparently
+
+and adding scoreboard players set #global game.saves.cont_unlocked.cactus 1 to whenever you'd like the contraption to be unlocked (e.g. after surviving a level)

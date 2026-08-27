@@ -1,0 +1,17 @@
+id,name,currency_drop,speed
+0,creeper,20,7
+1,wolf,25,5
+2,zombie,10,10
+3,skeleton,15,8
+4,spider,25,5
+5,spider_jockey,N/A,N/A
+6,silverfish,5,7
+7,silverfish_batch,25,6
+8,slime,20->10->5,10
+9,enderman,25,20
+10,cave_spider,30,5
+
+to add a new mob, you'll need to alter:
+game:raycasting_sub.mcfunction - to set the height of the health tag displayed above the mob
+hardcode:genergic.mob_cont_behavior.mcfunction - to code their behavior apparently
+hardcode:mob.spawning.mcfunction - to spawn the mob during a round

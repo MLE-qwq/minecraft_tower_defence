@@ -1,0 +1,446 @@
+type
+minecraft:multi_action
+title
+游戏菜单 - 道具放置
+columns
+pause
+body
+minecraft:plain_message
+contents
+选择要进行的操作:
+actions
+label
+打开/关闭暂停
+action
+run_command
+command
+/trigger game.trigger.operation set -2
+跳过倒计时
+/trigger game.trigger.operation set 1
+商店菜单
+/trigger game.trigger.operation set 2
+结束关卡
+/trigger game.trigger.operation set -1
+exit_action
+取消
+装置升级
+`f升级`b`o伤害
+/trigger game.trigger.upgrade set 1
+`f升级`a`o射程
+/trigger game.trigger.upgrade set 2
+`f升级`6`o发射速率
+/trigger game.trigger.upgrade set 3
+`c移除装置
+/trigger game.trigger.upgrade set -1001
+`f升级`d`o减速时长
+/trigger game.trigger.upgrade set 5
+游戏菜单
+plain_message
+注: 需要在 [选项... > 辅助功能设置...] 中将菜单背景模糊程度设置为关闭，才能在游戏时查看装置属性数值呜喵!
+关卡选择
+/trigger game.trigger.level_chosen set -1001
+设置
+/trigger game.trigger.level_chosen set -1002
+选择要游玩的关卡:
+第1关: 沙漠
+/trigger game.trigger.level_chosen set 1
+第2关: 森林
+/trigger game.trigger.level_chosen set 2
+第3关: 村庄
+/trigger game.trigger.level_chosen set 3
+第4关: 峡谷
+/trigger game.trigger.level_chosen set 4
+第5关: 矿井1
+/trigger game.trigger.level_chosen set 5
+第6关: 矿井2
+/trigger game.trigger.level_chosen set 6
+第7关: 蜘蛛洞穴
+/trigger game.trigger.level_chosen set 7
+第8关: 地下峡谷
+/trigger game.trigger.level_chosen set 8
+游戏菜单 - 路径建设
+选择要购买的装置:
+仙人掌 - $15
+/trigger game.trigger.purchase set 1
+鸡蛋发射器 - ￥50
+/trigger game.trigger.purchase set 2
+水 - $50
+/trigger game.trigger.purchase set 3
+活板门 - $150
+/trigger game.trigger.purchase set 4
+箭矢发射器 - $150
+/trigger game.trigger.purchase set 5
+铁栅栏 - $250
+/trigger game.trigger.purchase set 6
+粘液发射器 - $100
+/trigger game.trigger.purchase set 7
+打开/关闭夜视
+/trigger game.trigger.level_chosen set -2001
+打开/关闭悬浮显示装置耐久
+/trigger game.trigger.level_chosen set -2002
+打开/关闭在进入时暂停
+/trigger game.trigger.level_chosen set -2003
+`f升级容量
+`f升级减速加成
+/trigger game.trigger.upgrade set 4
+`b剩余时间: 
+score
+name
+#global
+objective
+game.mechanism.timer.min
+color
+yellow
+`b分
+game.mechanism.timer.sec
+`b秒`7 - `b
+text
+货币: 
+#00ffff
+$
+green
+game.data.currency
+`b第
+game.state.current_wave
+#ffff00
+`b波, 共
+game.state.total_waves
+`b波`7 - `b
+ `b(`a+$
+game.mechanism.new_currency_display
+`b)
+health_display
+newbie
+
+`b功能: 向四周发射鸡蛋。有`c150点耐久`b。
+`e使用方式: 将该物品丢弃于`a相邻`e于路径的方块上。
+`e该装置不可以直接放置于路径上。
+cont_egg_disp
+`c呱! QAQ不是这么用的啊老大! 放置鸡蛋发射器需要将该物品`l丢弃`r`c(默认键位: Q)至相邻于路径的方块上, 而不是把它投掷出去。=w=
+tool
+bridging_block
+`b功能: 打开游戏菜单。
+`e使用方式: 丢弃该物品。
+game_menu
+#minecraft:is_fire
+装置选项
+`b功能: 打开装置选项菜单。
+`e使用方式: 将该物品丢弃至想对其操作的装置上。
+cont_options
+物品不可用
+`c暂停时该物品不可用呜喵! QAQ
+placeholder
+selector
+@s
+`e跳过了倒计时。
+`c我寻思当前也没有倒计时啊, 怎么跳过嘛喵... =-=
+`c暂停时商店不可用呜喵! QAQ
+`c呱! 一次只能丢弃一个物品呜喵! 不然会被吞掉的! QAQ
+`c呱! 这里不可以! QAQ
+`c暂停时不能放置装置呜喵!
+`e结束了该关卡。
+`c已中途结束该关卡。
+@p
+`e移除了一个装置。
+`c泥没有足够的货币来升级`b`o伤害`r`c: 至少需要
+game.data.disp_cont.damage_cost
+`c而泥只有
+`c!
+`c泥没有足够的货币来升级`a`o射程`r`c: 至少需要
+game.data.disp_cont.range_cost
+`c泥没有足够的货币来升级`6`o发射速率`r`c: 至少需要
+game.data.disp_cont.fire_rate_cost
+`c泥没有足够的货币来升级`d`o减速时长`r`c: 至少需要
+game.data.disp_cont.duration_cost
+`b`o伤害`r`c已满级!
+`a`o射程`r`c已满级!
+`6`o发射速率`r`c已满级!
+`d`o减速时长`r`c已满级!
+`e已将`b`o伤害`r`e从
+game.data.disp_cont.damage
+aqua
+`e升级至
+game.data.disp_cont.damage_next
+`e (单位: `bHP`e), 耗费了`a$
+`e, 剩余`a$
+`e。
+`e已将`a`o射程`r`e从
+game.data.disp_cont.range
+game.data.disp_cont.range_next
+`e (单位: `am`e), 耗费了`a$
+`e已将`6`o发射速率\u207b\u00b9`r`e从
+game.data.disp_cont.fire_rate
+gold
+game.data.disp_cont.fire_rate_next
+`e (单位: `6tick`e), 耗费了`a$
+`e已将`d`o减速时长`r`e从
+game.data.disp_cont.duration
+game.data.disp_cont.duration_next
+`e (单位: `dtick`e), 耗费了`a$
+`c泥没有足够的货币以升级`f`o减速加成`r`c: 至少需要
+game.data.cont.viscosity_cost
+`f`o减速加成`r`c已满级!
+`e已将`f`o减速加成`r`e从
+game.data.cont.viscosity
+white
+game.data.cont.viscosity_next
+`e, 耗费了`a$
+`c泥没有足够的货币以升级`f`o容量`r`c: 至少需要
+game.data.cont.capacity_cost
+`f`o容量`r`c已满级!
+`e已将`f`o容量`r`e从
+game.data.cont.capacity
+game.data.cont.capacity_next
+`d-----------------------------------------------------
+`e仙人掌
+`e鸡蛋发射器
+`b伤害 (HP)`e: `a
+`e -> `a
+ `e(价格: `a
+`e)
+`e -> `c`o已满级
+`a射程 (m)`e: `a
+`6发射速率\u207b\u00b9 (tick)`e: `a
+`e箭矢发射器
+`6发射速率\u207b\u00b9 (tick): `a
+`e粘液发射器
+`d减速时长 (tick)`e: `a
+light_purple
+`e水
+`f减速加成`e: `f
+`f减速加成`e: `a
+`e活板门
+`b已使用容量`e: `f
+game.data.cont.mobs_trapped
+`e / 
+`e / `f\u221e
+`f容量`e: `f
+`f容量`e: `a
+`f容量:`e: `f\u221e`e -> `c`o已满级
+`e铁栅栏
+\n`c耐久: 
+game.data.health
+red
+`c/
+game.data.max_health
+`d-----------------------------------------------------\n
+`c泥没有通过该关卡! QAQ
+`c你死了!
+`kM`d 泥找到另一个彩蛋! awa (`e#1`d) `r`kM
+`kM`d 泥找到另一个彩蛋! awa (`e#2`d) `r`kM
+`d进度: 
+game.saves.easter_egg.count
+`d/`e2
+sign
+meow uwu
+click_event
+/execute unless score #global game.saves.easter_egg.0 matches 1 run scoreboard players set #global game.saves.easter_egg.0 2
+`b功能: 显示游戏菜单。
+show_menu
+`e选择了一个关卡。
+`c关闭`e了`b夜视`e。
+`a开启`e了`b夜视`e。
+`c关闭`e了`b悬浮显示装置耐久`e。
+`a开启`e了`b悬浮显示装置耐久`e。
+`c关闭`e了`b在进入时暂停`e。
+`a开启`e了`b在进入时暂停`e。
+`a指令集已完成初始化呜喵!
+$(id)
+bonus_chest_display
+center
+`a$
+@n[tag=bonus_chest]
+game.data.bonus_chest.currany
+block_outline2
+Block Outline 2
+block_outline
+Block Outline
+path_tracker
+Path Tracker
+path_tester
+Path Tester
+path_block
+Path Block
+\n`e任务: 建设一条到`a绿色发光方块`e的路径并通过购买和升级装置以保卫自己。\n- 泥有`b1分40秒`e的准备时间, 届时会天黑, 并且会有一波接一波的怪来袭。\n- 在每波之间泥有`b20秒`e的准备时间。\n- 泥可以通过`b丢弃`e物品栏中的`b指南针`e以`b打开游戏菜单`e。\n- 通过击杀怪泥可以获得货币。
+\n`7使用F3+D可以一键清屏。\n`e祝泥好运喵, 老大!
+\n`d-----------------------------------------------------
+`a恢复`e了时间。
+`c暂停`e了时间。
+`c游戏已暂停。在游戏菜单中操作以继续。
+minecraft:overworld
+auto-adsorped
+game.mechanism.path_tracker_x
+ 
+game.mechanism.path_tracker_z
+ / 
+game.mechanism.path_tester_x
+game.mechanism.path_tester_z
+bridged
+`b功能: 建设道路。
+`e使用方式: 手持该物品并走向
+`e泥希望将路径建设到的方块上。
+`e如果泥想要搭桥, 潜行并走到方块边缘。
+
+`e泥只能将路建设在与黄色发光方块相邻的四个方块上,
+`e并且不能与前面的部分重叠。
+
+
+游戏菜单
+`b功能: 显示游戏菜单。
+pbpc_path_tracker
+PBPC Path Tracker
+pbpc_path_tester
+PBPC Path Tester
+additional
+PBPC Path Block
+raycaster
+Raycaster
+minecraft:scale
+@n[tag=raycast_selected]
+`c / 
+\u2665
+`b / 
+npc
+`b波
+current_wave
+`a恭喜老大完成该关卡呜喵! awa
+`6`l胜利!
+cont_cactus
+cactus
+cont
+minecraft:egg
+egg_disp
+disp
+cont_water
+water
+Water
+cont_trapdoor
+trapdoor
+south
+Trapdoor
+west
+north
+east
+cont_arrow_disp
+minecraft:arrow
+arrow_disp
+cont_iron_bars
+iron_bars
++z
+z
+Iron Bars
+-x
+x
+-z
+cont_slime_disp
+minecraft:slime_ball
+slime_disp
+`c尚未解锁装置`2仙人掌`c呜喵!
+`c没有足够的货币以购买`2仙人掌`c呜喵! 至少需要`a$15`c, 但泥只有`a$
+`c!
+`b功能: 接触时对怪物造成`c10点伤害`b, 
+`b并失去`c10点耐久`b。初始时有`c15点耐久`b。
+`e使用方式: 将该物品丢弃至路径上。不可以被放置于桥上。
+`b花费`a$15`b购买了`2仙人掌`b, 剩余`a$
+game.data.currency_new
+`b。
+`c尚未解锁装置`e鸡蛋发射器`c呜喵!
+`c没有足够的货币以购买`e鸡蛋发射器`c呜喵! 至少需要`a$50`c, 但泥只有`a$
+鸡蛋发射器
+`b花费`a$50`b购买了`e鸡蛋发射器`b, 剩余`a$
+`c尚未解锁装置`1水`c呜喵!
+`c没有足够的货币以购买`1水`c呜喵! 至少需要`a$50`c, 但泥只有`a$有`a$
+`b功能: 接触时减缓怪物的速度。
+`b花费`a$50`b购买了`1水`b, 剩余`a$
+`c尚未解锁装置`6活板门`c呜喵!
+`c没有足够的货币以购买`6活板门`c呜喵! 至少需要`a$150`c, 但泥只有`a$
+`b功能: 接触时困住并击杀速度低于4格每秒的怪物。
+`e使用方式: 将物品丢弃至路径上。若被放置于桥上则有无限容量。
+`b花费`a$150`b购买了`6活板门`b, 剩余`a$
+`c尚未解锁装置`e箭矢发射器`c呜喵!
+`c没有足够的货币以购买`e箭矢发射器`c呜喵! 至少需要`a$150`c, 但泥只有`a$
+箭矢发射器
+`b功能: 向四周发射箭矢。有`c150点耐久`b。
+`b花费`a$150`b购买了`e箭矢发射器`b, 剩余`a$
+`c尚未解锁装置`7铁栅栏`c呜喵!
+`c没有足够的货币以购买`7铁栅栏`c呜喵! 至少需要`a$250`c, 但泥只有`a$
+`b功能: 阻止怪物继续前进。每和一个怪物接触1秒会失去`c20点耐久`b。有`c300点耐久`b。
+`e使用方式: 将该物品丢弃至路径上。
+`b花费`a$250`b购买了`7铁栅栏`b, 剩余`a$
+`c尚未解锁装置`e粘液发射器`c呜喵!
+`c没有足够的货币以购买`e粘液发射器`c呜喵! 至少需要`a$100`c, 但泥只有`a$
+粘液发射器
+`b功能: 向四周发射会将怪物速度减半的粘液球。有`c150点耐久`b。
+`b花费`a$100`b购买了`e粘液发射器`b, 剩余`a$
+`kM`a 泥刚刚解锁了新装置: `2仙人掌`a! awa `r`kM
+`kM`a 泥刚刚解锁了新装置: `e鸡蛋发射器`a! awa `r`kM
+`kM`a 泥刚刚解锁了新装置: `6活板门`a! awa `r`kM
+`kM`a 泥刚刚解锁了新装置: `e箭矢发射器`a! awa `r`kM
+`kM`a 泥刚刚解锁了新装置: `7铁栅栏`a! awa `r`kM
+`kM`a 泥刚刚解锁了新装置: `e粘液发射器`a! awa `r`kM
+projectile
++x
+egg
+arrow
+fixed
+no_damage
+slowdown
+slime_ball
+Before: 
+@n[tag=mob]
+dmg: 
+After: 
+currency: <new currency> (+<currency gained>)
+display_entity
+health_tracking
+`b第一关: 沙漠
+`a关于与鸣谢: 
+`a- 地形: `fMLE_qwq
+`a- 代码: `fMLE_qwq
+terrain_origin
+Terrain Origin
+path_start
+mob_spawnpoint
+Path Start
+path_ending
+Path Ending
+wave_data
+Wave Data
+`b第2关: 森林
+Additional Mob Spawnpoint
+`b第3关: 村庄
+auto_replace
+Auto Replace
+bonus_chest
+Bonus Chest
+`b第4关: 峡谷
+`b第5关: 矿井1
+path_forbidden
+Path Forbidden
+`b第6关: 矿井2
+`b第7关: 蜘蛛洞穴
+`b第8关: 地下峡谷
+`a- 地形: `f闹吃, MLE_qwq
+`7> (因为是从原版地形里复制过来的呜喵=w=)
+path_validity
+Path Validity
+`2泥`a中毒`2了! 从现在开始, 泥会在每波怪开始的时候失去`c1\u2665`2。此伤害可`4致命`2。
+mob
+being_ridden
+riding
+batch_main
+batch_sub
+batch_sub_1
+batch_sub_0
+Slime Anchor
+entity_anchor
+slime_behavior
+jumping
+Enderman Anchor
+trapdoor_immune
+move_by_teleportation
+water_damage
+venomous
+values
+game:init
+game:loop

@@ -1,0 +1,4 @@
+-2,toggle_pause
+-1,quit_level
+1,skip_countdown
+2,purchase_menu

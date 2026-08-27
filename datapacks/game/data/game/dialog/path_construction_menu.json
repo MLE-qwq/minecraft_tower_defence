@@ -1,0 +1,31 @@
+{
+    "type":"minecraft:multi_action",
+    "title":"Game Menu - Path Construction",
+    "columns":1,
+    "body":[
+        {
+            "type":"minecraft:plain_message",
+            "contents":"Choose an action to operate:"
+        }
+    ],
+    "pause": false,
+    "actions":[
+        {
+            "label":"Toggle Pause",
+            "action":{
+                "type":"run_command",
+                "command":"/trigger game.trigger.operation set -2"
+            }
+        },
+        {
+            "label":"Quit Level",
+            "action":{
+                "type":"run_command",
+                "command":"/trigger game.trigger.operation set -1"
+            }
+        }
+    ],
+    "exit_action":{
+        "label":"Cancel"
+    }
+}

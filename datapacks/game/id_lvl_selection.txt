@@ -1,0 +1,6 @@
+1,2,...: a certain level selected
+-1001: display all levels
+-1002: open settings
+-2001: toggle night vision
+-2002: toggle display health bar for contraptions
+-2003: toggle pause upon join 
