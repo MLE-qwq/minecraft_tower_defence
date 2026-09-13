@@ -1,6 +1,0 @@
--1001,remove_contraption
-1,damage,dispensers
-2,range,dispensers
-3,fire_rate,dispensers
-4,viscosity,water
-5,duration,slime_disp

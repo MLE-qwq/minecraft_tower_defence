@@ -1,9 +1,0 @@
-#water - slow mobs down
-    #viscosity, speed multiplier: (1,0.67),(2,0.57),(3,0.45),(4,0.33),(5,0.25)
-    execute as @e[tag=mob] at @s if score @s game.data.mob.ticks_left_until_next_anchor matches ..0 run scoreboard players operation @s game.data.mob.ticks_per_block = @s game.data.mob.ticks_per_block_original
-    execute as @e[tag=mob] at @s if score @s game.data.mob.ticks_left_until_next_anchor matches ..0 if entity @e[tag=water,distance=..0.5] run scoreboard players operation @s game.data.mob.ticks_per_block *= #global const.100
-    execute as @e[tag=mob] at @s if score @s game.data.mob.ticks_left_until_next_anchor matches ..0 if entity @e[tag=water,distance=..0.5] if score @n[tag=water] game.data.cont.viscosity matches 1 run scoreboard players operation @s game.data.mob.ticks_per_block /= #global const.67
-    execute as @e[tag=mob] at @s if score @s game.data.mob.ticks_left_until_next_anchor matches ..0 if entity @e[tag=water,distance=..0.5] if score @n[tag=water] game.data.cont.viscosity matches 2 run scoreboard players operation @s game.data.mob.ticks_per_block /= #global const.57
-    execute as @e[tag=mob] at @s if score @s game.data.mob.ticks_left_until_next_anchor matches ..0 if entity @e[tag=water,distance=..0.5] if score @n[tag=water] game.data.cont.viscosity matches 3 run scoreboard players operation @s game.data.mob.ticks_per_block /= #global const.45
-    execute as @e[tag=mob] at @s if score @s game.data.mob.ticks_left_until_next_anchor matches ..0 if entity @e[tag=water,distance=..0.5] if score @n[tag=water] game.data.cont.viscosity matches 4 run scoreboard players operation @s game.data.mob.ticks_per_block /= #global const.33
-    execute as @e[tag=mob] at @s if score @s game.data.mob.ticks_left_until_next_anchor matches ..0 if entity @e[tag=water,distance=..0.5] if score @n[tag=water] game.data.cont.viscosity matches 5 run scoreboard players operation @s game.data.mob.ticks_per_block /= #global const.25
